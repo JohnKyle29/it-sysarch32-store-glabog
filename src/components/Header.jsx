@@ -6,7 +6,7 @@ const Header = () => {
       <h1>Motorcycle Store</h1>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
+          
           {/* Add more navigation links here */}
         </ul>
       </nav>

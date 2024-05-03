@@ -3,22 +3,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ProductsProvider } from './context/ProductsContext';
-import Header from './components/Header';
 import ProductList from './components/ProductList';
-import Footer from './components/Footer'; // Ensure the correct import path
-
+import ProductDetails from './components/ProductDetails'; // Import the ProductDetails component
+import Header from './components/Header'
+import Footer from './components/Footer';
 const App = () => {
   return (
     <ProductsProvider>
       <Router>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/" element={<ProductList />} />
-            {/* Add more routes for other pages (e.g., About, Contact) */}
-          </Routes>
-          <Footer />
-        </div>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<ProductList />} />
+          <Route path="/product/:productId" element={<ProductDetails />} /> {/* New route for product details */}
+        </Routes>
+        <Footer/>
       </Router>
     </ProductsProvider>
   );
